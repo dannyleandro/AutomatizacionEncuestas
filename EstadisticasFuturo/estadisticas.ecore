@@ -16,6 +16,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Salto" eSuperTypes="#//Elemento">
     <eStructuralFeatures xsi:type="ecore:EReference" name="destino" lowerBound="1"
         eType="#//Elemento"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="titulo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Pregunta" eSuperTypes="#//Elemento">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tipoPregunta" unique="false"
