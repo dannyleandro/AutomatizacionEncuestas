@@ -8,9 +8,9 @@
   <eClassifiers xsi:type="ecore:EClass" name="Elemento" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="Inicio" eSuperTypes="#//Elemento"/>
   <eClassifiers xsi:type="ecore:EClass" name="Modulo" eSuperTypes="#//Elemento">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="preguntas" lowerBound="1"
-        upperBound="-1" eType="#//Pregunta"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="titulo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="preguntas" lowerBound="1"
+        upperBound="-1" eType="#//Pregunta" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Fin" eSuperTypes="#//Elemento"/>
   <eClassifiers xsi:type="ecore:EClass" name="Salto" eSuperTypes="#//Elemento">
@@ -18,11 +18,11 @@
         eType="#//Elemento"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Pregunta" eSuperTypes="#//Elemento">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="respuestas" lowerBound="1"
-        upperBound="-1" eType="#//Respuesta"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tipoPregunta" unique="false"
         eType="#//ETipoPregunta"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="descripcion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="respuestas" lowerBound="1"
+        upperBound="-1" eType="#//Respuesta" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Respuesta" eSuperTypes="#//Elemento">
     <eStructuralFeatures xsi:type="ecore:EReference" name="origen" lowerBound="1"
