@@ -5,9 +5,85 @@
       <respuestas xsi:type="EPF:RespuestaAbierta" origen="//@elemento.1"/>
     </preguntas>
     <preguntas tipoPregunta="UR" descripcion="¿Cual es su edad?">
-      <respuestas xsi:type="EPF:RespuestaSeleccion" valor="18 años o mas"/>
-      <respuestas xsi:type="EPF:RespuestaSeleccion" valor="Menos de 18 años"/>
+      <respuestas xsi:type="EPF:RespuestaSeleccion" origen="//@elemento.2" valor="18 años o mas"/>
+      <respuestas xsi:type="EPF:RespuestaSeleccion" origen="//@elemento.5" valor="Menos de 18 años"/>
+    </preguntas>
+    <preguntas tipoPregunta="UR" descripcion="¿Cual es su estado civil?">
+      <respuestas xsi:type="EPF:RespuestaSeleccion" origen="//@elemento.6" valor="Casado"/>
+      <respuestas xsi:type="EPF:RespuestaSeleccion" origen="//@elemento.5" valor="Soltero"/>
+      <respuestas xsi:type="EPF:RespuestaSeleccion" origen="//@elemento.6" valor="Union Libre"/>
+    </preguntas>
+    <preguntas tipoPregunta="UR" descripcion="¿Hace cuanto vive con su pareja?">
+      <respuestas xsi:type="EPF:RespuestaSeleccion" origen="//@elemento.5" valor="Menos de dos años"/>
+      <respuestas xsi:type="EPF:RespuestaSeleccion" origen="//@elemento.5" valor="2 años o mas"/>
+    </preguntas>
+    <preguntas tipoPregunta="UR" descripcion="¿Cual es su grado de escolaridad?">
+      <respuestas xsi:type="EPF:RespuestaSeleccion" origen="//@elemento.9" valor="Bachiller"/>
+      <respuestas xsi:type="EPF:RespuestaSeleccion" origen="//@elemento.7" valor="Técnico"/>
+      <respuestas xsi:type="EPF:RespuestaSeleccion" origen="//@elemento.7" valor="Tecnólogico"/>
+      <respuestas xsi:type="EPF:RespuestaSeleccion" origen="//@elemento.8" valor="Universitario"/>
+      <respuestas xsi:type="EPF:RespuestaSeleccion" origen="//@elemento.8" valor="Postgrado"/>
     </preguntas>
   </elemento>
-  <elemento xsi:type="EPF:Salto"/>
+  <elemento xsi:type="EPF:Salto" destino="//@elemento.0/@preguntas.1" titulo="S-EDAD"/>
+  <elemento xsi:type="EPF:Salto" destino="//@elemento.0/@preguntas.2" titulo="S-ESTADO_CIVIL"/>
+  <elemento xsi:type="EPF:Modulo" titulo="Modulo Ingresos">
+    <preguntas tipoPregunta="UR" descripcion="¿Cuales son sus ingresos mensuales?">
+      <respuestas xsi:type="EPF:RespuestaSeleccion" valor="Menos de un salario minimo"/>
+      <respuestas xsi:type="EPF:RespuestaSeleccion" valor="Un salario minimo"/>
+      <respuestas xsi:type="EPF:RespuestaSeleccion" valor="Mas de un salario minimo"/>
+    </preguntas>
+    <preguntas tipoPregunta="UR" descripcion="¿Cuantos trabajos tiene?">
+      <respuestas xsi:type="EPF:RespuestaSeleccion" valor="1"/>
+      <respuestas xsi:type="EPF:RespuestaSeleccion" valor="2"/>
+      <respuestas xsi:type="EPF:RespuestaSeleccion" valor="3"/>
+    </preguntas>
+    <preguntas tipoPregunta="UR" descripcion="¿Usted es trabajador independiente?">
+      <respuestas xsi:type="EPF:RespuestaSeleccion" valor="Si"/>
+      <respuestas xsi:type="EPF:RespuestaSeleccion" valor="No"/>
+    </preguntas>
+    <preguntas tipoPregunta="MR" descripcion="Su/s contrato/s es/son">
+      <respuestas xsi:type="EPF:RespuestaSeleccion" valor="A termino fijo"/>
+      <respuestas xsi:type="EPF:RespuestaSeleccion" valor="Prestación de servicios"/>
+      <respuestas xsi:type="EPF:RespuestaSeleccion" valor="A término indefinido"/>
+    </preguntas>
+    <preguntas tipoPregunta="UR" descripcion="¿Cotiza salud y pensión?">
+      <respuestas xsi:type="EPF:RespuestaSeleccion" valor="Si"/>
+      <respuestas xsi:type="EPF:RespuestaSeleccion" valor="No"/>
+    </preguntas>
+  </elemento>
+  <elemento xsi:type="EPF:Modulo" titulo="Modulo Universitario">
+    <preguntas tipoPregunta="UR" descripcion="¿Cuantos años estudio en la universidad?">
+      <respuestas xsi:type="EPF:RespuestaSeleccion" origen="//@elemento.11" valor="4 años"/>
+      <respuestas xsi:type="EPF:RespuestaSeleccion" origen="//@elemento.11" valor="Mas de 4 años y menos de 8"/>
+      <respuestas xsi:type="EPF:RespuestaSeleccion" origen="//@elemento.11" valor="8 años o mas"/>
+    </preguntas>
+    <preguntas tipoPregunta="MR" descripcion="Estudio en una universidad:">
+      <respuestas xsi:type="EPF:RespuestaSeleccion" valor="Pública"/>
+      <respuestas xsi:type="EPF:RespuestaSeleccion" valor="Privada"/>
+      <respuestas xsi:type="EPF:RespuestaSeleccion" valor="Privada y pública"/>
+    </preguntas>
+    <preguntas tipoPregunta="UR" descripcion="¿Usted pago?">
+      <respuestas xsi:type="EPF:RespuestaSeleccion" valor="Menos de un millon"/>
+      <respuestas xsi:type="EPF:RespuestaSeleccion" valor="Más de un millon y menos de 4 millones"/>
+      <respuestas xsi:type="EPF:RespuestaSeleccion" valor="Más de 4 millones"/>
+    </preguntas>
+    <preguntas tipoPregunta="UR" descripcion="¿Usted terminó todos sus estudios?">
+      <respuestas xsi:type="EPF:RespuestaSeleccion" valor="Si"/>
+      <respuestas xsi:type="EPF:RespuestaSeleccion" valor="No"/>
+    </preguntas>
+    <preguntas descripcion="¿Cual es el nombre de su universidad?">
+      <respuestas xsi:type="EPF:RespuestaAbierta" valor=""/>
+    </preguntas>
+  </elemento>
+  <elemento xsi:type="EPF:Salto" destino="//@elemento.0/@preguntas.4" titulo="S-GRADO_ESC"/>
+  <elemento xsi:type="EPF:Salto" destino="//@elemento.0/@preguntas.3" titulo="S-VIVE_PAREJA"/>
+  <elemento xsi:type="EPF:Salto" destino="//@elemento.3" titulo="S-MOD_INGRESOS"/>
+  <elemento xsi:type="EPF:Salto" destino="//@elemento.4" titulo="S-MOD_UNIVERSITARIO"/>
+  <elemento xsi:type="EPF:Salto" destino="//@elemento.10" titulo="S-FIN"/>
+  <elemento xsi:type="EPF:Fin"/>
+  <elemento xsi:type="EPF:Salto" destino="//@elemento.4/@preguntas.1" titulo="S-ESTUDIO_U"/>
+  <elemento xsi:type="EPF:Salto" destino="//@elemento.4/@preguntas.3" titulo="S-TERMINO_ESTUDIOS"/>
+  <elemento xsi:type="EPF:Salto" destino="//@elemento.4/@preguntas.2" titulo="S-PAGO"/>
+  <elemento xsi:type="EPF:Salto" destino="//@elemento.4/@preguntas.4" titulo="S-NOMBRE_U"/>
 </EPF:Encuesta>
