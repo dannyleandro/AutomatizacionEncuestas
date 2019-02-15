@@ -5,26 +5,37 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="elementos" upperBound="-1"
         eType="#//Elemento"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Elemento">
+  <eClassifiers xsi:type="ecore:EClass" name="Elemento" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="InicioEncuesta" eSuperTypes="#//Elemento"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Inicio" eSuperTypes="#//Elemento"/>
   <eClassifiers xsi:type="ecore:EClass" name="Modulo" eSuperTypes="#//Elemento">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="preguntas" upperBound="-1"
-        eType="#//Pregunta"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="preguntas" lowerBound="1"
+        upperBound="-1" eType="#//Pregunta"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="titulo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="FinEncuesta" eSuperTypes="#//Elemento"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Fin" eSuperTypes="#//Elemento"/>
   <eClassifiers xsi:type="ecore:EClass" name="Salto" eSuperTypes="#//Elemento">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="elementos" eType="#//Elemento"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="destino" lowerBound="1"
+        eType="#//Elemento"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Pregunta">
+  <eClassifiers xsi:type="ecore:EClass" name="Pregunta" abstract="true" eSuperTypes="#//Elemento">
     <eStructuralFeatures xsi:type="ecore:EReference" name="respuestas" lowerBound="1"
         upperBound="-1" eType="#//Respuesta"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tipoPregunta" unique="false"
+        eType="#//ETipoPregunta"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="descripcion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Respuesta">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="salto" lowerBound="1" eType="#//Salto"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Respuesta" eSuperTypes="#//Elemento">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="origen" lowerBound="1"
+        eType="#//Salto"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="valor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="PreguntaAbierta" eSuperTypes="#//Pregunta"/>
-  <eClassifiers xsi:type="ecore:EClass" name="PreguntaMultiple" eSuperTypes="#//Pregunta"/>
-  <eClassifiers xsi:type="ecore:EClass" name="PreguntaUnicaOp" eSuperTypes="#//Pregunta"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="ETipoPregunta">
+    <eLiterals name="A"/>
+    <eLiterals name="UR" value="1"/>
+    <eLiterals name="MR" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RespuestaAbierta" eSuperTypes="#//Respuesta"/>
+  <eClassifiers xsi:type="ecore:EClass" name="RespuestaSeleccion" eSuperTypes="#//Respuesta"/>
 </ecore:EPackage>
