@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="EstadisticasParaElFuturo" nsURI="EPF.com" nsPrefix="EPF">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="SistemaEncuestas" nsURI="EPF.com" nsPrefix="EPF">
   <eClassifiers xsi:type="ecore:EClass" name="Encuesta">
     <eStructuralFeatures xsi:type="ecore:EReference" name="elemento" upperBound="-1"
         eType="#//Elemento" containment="true"/>
@@ -42,7 +42,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="titulo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Nodo" abstract="true" eSuperTypes="#//Elemento"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Inicio"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Inicio">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="titulo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SaltoInicio" eSuperTypes="#//Navegacion">
     <eStructuralFeatures xsi:type="ecore:EReference" name="origen" lowerBound="1"
         eType="#//Inicio"/>
