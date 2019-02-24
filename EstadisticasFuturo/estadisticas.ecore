@@ -10,21 +10,25 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="titulo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="preguntas" lowerBound="1"
         upperBound="-1" eType="#//Pregunta" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inicio" lowerBound="1"
+        eType="#//Inicio" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fin" eType="#//Fin" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Fin" eSuperTypes="#//Nodo"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Salto" eSuperTypes="#//Navegacion">
+  <eClassifiers xsi:type="ecore:EClass" name="Fin"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SaltoRespuesta" eSuperTypes="#//Navegacion">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defecto" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false" unsettable="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="destino" lowerBound="1"
         eType="#//Nodo"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="titulo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="origen" lowerBound="1"
-        eType="#//Nodo"/>
+        eType="#//Respuesta"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Pregunta" eSuperTypes="#//Nodo">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tipoPregunta" unique="false"
         eType="#//ETipoPregunta"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="descripcion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="respuestas" lowerBound="1"
-        upperBound="-1" eType="#//Respuesta" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="respuestas" upperBound="-1"
+        eType="#//Respuesta" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Respuesta">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="valor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -34,6 +38,33 @@
     <eLiterals name="UR" value="1"/>
     <eLiterals name="MR" value="2"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Navegacion" abstract="true" eSuperTypes="#//Elemento"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Navegacion" abstract="true" eSuperTypes="#//Elemento">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="titulo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Nodo" abstract="true" eSuperTypes="#//Elemento"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Inicio"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SaltoInicio" eSuperTypes="#//Navegacion">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="origen" lowerBound="1"
+        eType="#//Inicio"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="destino" lowerBound="1"
+        eType="#//Pregunta"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SaltoPregunta" eSuperTypes="#//Navegacion">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="origen" lowerBound="1"
+        eType="#//Pregunta"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="destino" lowerBound="1"
+        eType="#//Nodo"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SaltoFinRespuesta" eSuperTypes="#//Navegacion">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="destino" lowerBound="1"
+        eType="#//Fin"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="origen" lowerBound="1"
+        eType="#//Respuesta"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SaltoFinPregunta" eSuperTypes="#//Navegacion">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="destino" lowerBound="1"
+        eType="#//Fin"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="origen" lowerBound="1"
+        eType="#//Pregunta"/>
+  </eClassifiers>
 </ecore:EPackage>
