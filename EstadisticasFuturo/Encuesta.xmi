@@ -1,3 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<EPF:Encuesta xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:EPF="EPF.com" xsi:schemaLocation="EPF.com estadisticas.ecore"/>
+<EPF:Encuesta xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:EPF="EPF.com">
+  <elemento xsi:type="EPF:Modulo" titulo="Modulo de datos personales">
+    <preguntas descripcion="¿Cúal es su nombre?"/>
+    <preguntas tipoPregunta="UR" descripcion="¿Cúal es su edad?">
+      <respuestas valor="18 años o más"/>
+      <respuestas valor="Menos de 18 años"/>
+    </preguntas>
+    <preguntas tipoPregunta="UR" descripcion="¿Cúal es su estado civil?">
+      <respuestas valor="Casado"/>
+      <respuestas valor="Soltero"/>
+      <respuestas valor="Unión libre"/>
+    </preguntas>
+    <preguntas tipoPregunta="UR" descripcion="¿Hace cuanto vive con su pareja?">
+      <respuestas valor="Menos de 2 años"/>
+      <respuestas valor="2 años o más"/>
+    </preguntas>
+    <preguntas tipoPregunta="UR" descripcion="¿Cúal es su grado de escolaridad?">
+      <respuestas valor="Bachiller"/>
+      <respuestas valor="Técnico"/>
+      <respuestas valor="Tecnólogo"/>
+      <respuestas valor="Universitario"/>
+      <respuestas valor="Postgrado"/>
+    </preguntas>
+    <inicio titulo="Inicio módulo de datos personales"/>
+    <fin titulo="Fin módulo datos personales"/>
+  </elemento>
+  <elemento xsi:type="EPF:Modulo" titulo="Módulo de ingresos">
+    <preguntas tipoPregunta="UR" descripcion="¿Cáules son sus ingresos mensuales?"/>
+    <preguntas tipoPregunta="UR" descripcion="¿Cuántos trabajos tiene?"/>
+    <preguntas tipoPregunta="UR" descripcion="¿Usted es trabajador independiente?"/>
+    <preguntas tipoPregunta="MR" descripcion="Su/sus contrato/s es/son"/>
+    <preguntas tipoPregunta="UR" descripcion="¿Cotiza salud y pensión?"/>
+    <inicio titulo="Inicio módulo ingresos"/>
+  </elemento>
+  <elemento xsi:type="EPF:SaltoInicio" origen="//@elemento.0/@inicio" destino="//@elemento.0/@preguntas.0"/>
+  <elemento xsi:type="EPF:SaltoPregunta" origen="//@elemento.0/@preguntas.0" destino="//@elemento.0/@preguntas.1"/>
+  <elemento xsi:type="EPF:SaltoRespuesta" destino="//@elemento.0/@preguntas.2" origen="//@elemento.0/@preguntas.1/@respuestas.0"/>
+  <elemento xsi:type="EPF:SaltoRespuesta" destino="//@elemento.0/@preguntas.4" origen="//@elemento.0/@preguntas.1/@respuestas.0"/>
+  <elemento xsi:type="EPF:SaltoRespuesta" destino="//@elemento.0/@preguntas.3" origen="//@elemento.0/@preguntas.2/@respuestas.0"/>
+  <elemento xsi:type="EPF:SaltoRespuesta" destino="//@elemento.0/@preguntas.3" origen="//@elemento.0/@preguntas.2/@respuestas.2"/>
+  <elemento xsi:type="EPF:SaltoRespuesta" destino="//@elemento.0/@preguntas.4" origen="//@elemento.0/@preguntas.2/@respuestas.1"/>
+  <elemento xsi:type="EPF:SaltoPregunta" origen="//@elemento.0/@preguntas.3" destino="//@elemento.0/@preguntas.4"/>
+  <elemento xsi:type="EPF:SaltoRespuesta" destino="//@elemento.1" origen="//@elemento.0/@preguntas.4/@respuestas.1"/>
+  <elemento xsi:type="EPF:SaltoRespuesta" destino="//@elemento.1" origen="//@elemento.0/@preguntas.4/@respuestas.2"/>
+  <elemento xsi:type="EPF:SaltoFinRespuesta" destino="//@elemento.0/@fin" origen="//@elemento.0/@preguntas.4/@respuestas.0"/>
+</EPF:Encuesta>
