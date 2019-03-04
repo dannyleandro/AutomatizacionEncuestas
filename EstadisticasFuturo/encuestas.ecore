@@ -13,6 +13,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="inicio" lowerBound="1"
         eType="#//Inicio" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="fin" eType="#//Fin" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="idModulo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="esInicial" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Fin">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="titulo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -27,18 +29,20 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Pregunta" eSuperTypes="#//Nodo">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="tipoPregunta" unique="false"
-        eType="#//ETipoPregunta"/>
+        eType="#//ETipoPregunta" defaultValueLiteral="A"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="descripcion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="respuestas" upperBound="-1"
         eType="#//Respuesta" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="idPregunta" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Respuesta">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="valor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="idRespuesta" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ETipoPregunta">
-    <eLiterals name="A"/>
-    <eLiterals name="UR" value="1"/>
-    <eLiterals name="MR" value="2"/>
+    <eLiterals name="A" value="1"/>
+    <eLiterals name="UR" value="2"/>
+    <eLiterals name="MR" value="3"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Navegacion" abstract="true" eSuperTypes="#//Elemento">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="titulo" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

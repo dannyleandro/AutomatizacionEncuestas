@@ -19,6 +19,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference encuestas.ecore#//Modulo/preguntas"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference encuestas.ecore#//Modulo/inicio"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference encuestas.ecore#//Modulo/fin"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute encuestas.ecore#//Modulo/idModulo"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute encuestas.ecore#//Modulo/esInicial"/>
     </genClasses>
     <genClasses ecoreClass="encuestas.ecore#//Fin">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute encuestas.ecore#//Fin/titulo"/>
@@ -32,9 +34,11 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute encuestas.ecore#//Pregunta/tipoPregunta"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute encuestas.ecore#//Pregunta/descripcion"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference encuestas.ecore#//Pregunta/respuestas"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute encuestas.ecore#//Pregunta/idPregunta"/>
     </genClasses>
     <genClasses ecoreClass="encuestas.ecore#//Respuesta">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute encuestas.ecore#//Respuesta/valor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute encuestas.ecore#//Respuesta/idRespuesta"/>
     </genClasses>
     <genClasses image="false" ecoreClass="encuestas.ecore#//Navegacion">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute encuestas.ecore#//Navegacion/titulo"/>

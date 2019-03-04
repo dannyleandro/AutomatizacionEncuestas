@@ -1,0 +1,7 @@
+System.out.println("");
+NodosInicio().println();
+
+
+operation NodosInicio():Any{
+	return Elemento;
+}
