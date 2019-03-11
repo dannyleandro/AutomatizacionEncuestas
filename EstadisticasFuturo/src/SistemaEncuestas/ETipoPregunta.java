@@ -26,7 +26,7 @@ public enum ETipoPregunta implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	A(0, "A", "A"),
+	A(1, "A", "A"),
 
 	/**
 	 * The '<em><b>UR</b></em>' literal object.
@@ -36,7 +36,7 @@ public enum ETipoPregunta implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	UR(1, "UR", "UR"),
+	UR(2, "UR", "UR"),
 
 	/**
 	 * The '<em><b>MR</b></em>' literal object.
@@ -46,7 +46,7 @@ public enum ETipoPregunta implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	MR(2, "MR", "MR");
+	MR(3, "MR", "MR");
 
 	/**
 	 * The '<em><b>A</b></em>' literal value.
@@ -61,7 +61,7 @@ public enum ETipoPregunta implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int A_VALUE = 0;
+	public static final int A_VALUE = 1;
 
 	/**
 	 * The '<em><b>UR</b></em>' literal value.
@@ -76,7 +76,7 @@ public enum ETipoPregunta implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int UR_VALUE = 1;
+	public static final int UR_VALUE = 2;
 
 	/**
 	 * The '<em><b>MR</b></em>' literal value.
@@ -91,7 +91,7 @@ public enum ETipoPregunta implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int MR_VALUE = 2;
+	public static final int MR_VALUE = 3;
 
 	/**
 	 * An array of all the '<em><b>ETipo Pregunta</b></em>' enumerators.

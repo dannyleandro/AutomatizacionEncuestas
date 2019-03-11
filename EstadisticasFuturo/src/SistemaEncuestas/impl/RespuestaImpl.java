@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link SistemaEncuestas.impl.RespuestaImpl#getValor <em>Valor</em>}</li>
+ *   <li>{@link SistemaEncuestas.impl.RespuestaImpl#getIdRespuesta <em>Id Respuesta</em>}</li>
  * </ul>
  *
  * @generated
@@ -45,6 +46,26 @@ public class RespuestaImpl extends MinimalEObjectImpl.Container implements Respu
 	 * @ordered
 	 */
 	protected String valor = VALOR_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getIdRespuesta() <em>Id Respuesta</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIdRespuesta()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int ID_RESPUESTA_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getIdRespuesta() <em>Id Respuesta</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIdRespuesta()
+	 * @generated
+	 * @ordered
+	 */
+	protected int idRespuesta = ID_RESPUESTA_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -91,11 +112,34 @@ public class RespuestaImpl extends MinimalEObjectImpl.Container implements Respu
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getIdRespuesta() {
+		return idRespuesta;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIdRespuesta(int newIdRespuesta) {
+		int oldIdRespuesta = idRespuesta;
+		idRespuesta = newIdRespuesta;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SistemaEncuestasPackage.RESPUESTA__ID_RESPUESTA, oldIdRespuesta, idRespuesta));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case SistemaEncuestasPackage.RESPUESTA__VALOR:
 				return getValor();
+			case SistemaEncuestasPackage.RESPUESTA__ID_RESPUESTA:
+				return getIdRespuesta();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -110,6 +154,9 @@ public class RespuestaImpl extends MinimalEObjectImpl.Container implements Respu
 		switch (featureID) {
 			case SistemaEncuestasPackage.RESPUESTA__VALOR:
 				setValor((String)newValue);
+				return;
+			case SistemaEncuestasPackage.RESPUESTA__ID_RESPUESTA:
+				setIdRespuesta((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -126,6 +173,9 @@ public class RespuestaImpl extends MinimalEObjectImpl.Container implements Respu
 			case SistemaEncuestasPackage.RESPUESTA__VALOR:
 				setValor(VALOR_EDEFAULT);
 				return;
+			case SistemaEncuestasPackage.RESPUESTA__ID_RESPUESTA:
+				setIdRespuesta(ID_RESPUESTA_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -140,6 +190,8 @@ public class RespuestaImpl extends MinimalEObjectImpl.Container implements Respu
 		switch (featureID) {
 			case SistemaEncuestasPackage.RESPUESTA__VALOR:
 				return VALOR_EDEFAULT == null ? valor != null : !VALOR_EDEFAULT.equals(valor);
+			case SistemaEncuestasPackage.RESPUESTA__ID_RESPUESTA:
+				return idRespuesta != ID_RESPUESTA_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -156,6 +208,8 @@ public class RespuestaImpl extends MinimalEObjectImpl.Container implements Respu
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (valor: ");
 		result.append(valor);
+		result.append(", idRespuesta: ");
+		result.append(idRespuesta);
 		result.append(')');
 		return result.toString();
 	}

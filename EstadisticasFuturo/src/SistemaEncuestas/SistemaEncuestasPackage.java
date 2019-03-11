@@ -77,13 +77,22 @@ public interface SistemaEncuestasPackage extends EPackage {
 	int ENCUESTA__ELEMENTO = 0;
 
 	/**
+	 * The feature id for the '<em><b>Titulo</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENCUESTA__TITULO = 1;
+
+	/**
 	 * The number of structural features of the '<em>Encuesta</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENCUESTA_FEATURE_COUNT = 1;
+	int ENCUESTA_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Encuesta</em>' class.
@@ -197,13 +206,31 @@ public interface SistemaEncuestasPackage extends EPackage {
 	int MODULO__FIN = NODO_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Id Modulo</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODULO__ID_MODULO = NODO_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Es Inicial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MODULO__ES_INICIAL = NODO_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>Modulo</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODULO_FEATURE_COUNT = NODO_FEATURE_COUNT + 4;
+	int MODULO_FEATURE_COUNT = NODO_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>Modulo</em>' class.
@@ -390,13 +417,22 @@ public interface SistemaEncuestasPackage extends EPackage {
 	int PREGUNTA__RESPUESTAS = NODO_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Id Pregunta</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PREGUNTA__ID_PREGUNTA = NODO_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Pregunta</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PREGUNTA_FEATURE_COUNT = NODO_FEATURE_COUNT + 3;
+	int PREGUNTA_FEATURE_COUNT = NODO_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Pregunta</em>' class.
@@ -427,13 +463,22 @@ public interface SistemaEncuestasPackage extends EPackage {
 	int RESPUESTA__VALOR = 0;
 
 	/**
+	 * The feature id for the '<em><b>Id Respuesta</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int RESPUESTA__ID_RESPUESTA = 1;
+
+	/**
 	 * The number of structural features of the '<em>Respuesta</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RESPUESTA_FEATURE_COUNT = 1;
+	int RESPUESTA_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Respuesta</em>' class.
@@ -734,6 +779,17 @@ public interface SistemaEncuestasPackage extends EPackage {
 	EReference getEncuesta_Elemento();
 
 	/**
+	 * Returns the meta object for the attribute '{@link SistemaEncuestas.Encuesta#getTitulo <em>Titulo</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Titulo</em>'.
+	 * @see SistemaEncuestas.Encuesta#getTitulo()
+	 * @see #getEncuesta()
+	 * @generated
+	 */
+	EAttribute getEncuesta_Titulo();
+
+	/**
 	 * Returns the meta object for class '{@link SistemaEncuestas.Elemento <em>Elemento</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -796,6 +852,28 @@ public interface SistemaEncuestasPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getModulo_Fin();
+
+	/**
+	 * Returns the meta object for the attribute '{@link SistemaEncuestas.Modulo#getIdModulo <em>Id Modulo</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id Modulo</em>'.
+	 * @see SistemaEncuestas.Modulo#getIdModulo()
+	 * @see #getModulo()
+	 * @generated
+	 */
+	EAttribute getModulo_IdModulo();
+
+	/**
+	 * Returns the meta object for the attribute '{@link SistemaEncuestas.Modulo#getEsInicial <em>Es Inicial</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Es Inicial</em>'.
+	 * @see SistemaEncuestas.Modulo#getEsInicial()
+	 * @see #getModulo()
+	 * @generated
+	 */
+	EAttribute getModulo_EsInicial();
 
 	/**
 	 * Returns the meta object for class '{@link SistemaEncuestas.Fin <em>Fin</em>}'.
@@ -905,6 +983,17 @@ public interface SistemaEncuestasPackage extends EPackage {
 	EReference getPregunta_Respuestas();
 
 	/**
+	 * Returns the meta object for the attribute '{@link SistemaEncuestas.Pregunta#getIdPregunta <em>Id Pregunta</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id Pregunta</em>'.
+	 * @see SistemaEncuestas.Pregunta#getIdPregunta()
+	 * @see #getPregunta()
+	 * @generated
+	 */
+	EAttribute getPregunta_IdPregunta();
+
+	/**
 	 * Returns the meta object for class '{@link SistemaEncuestas.Respuesta <em>Respuesta</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -924,6 +1013,17 @@ public interface SistemaEncuestasPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getRespuesta_Valor();
+
+	/**
+	 * Returns the meta object for the attribute '{@link SistemaEncuestas.Respuesta#getIdRespuesta <em>Id Respuesta</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Id Respuesta</em>'.
+	 * @see SistemaEncuestas.Respuesta#getIdRespuesta()
+	 * @see #getRespuesta()
+	 * @generated
+	 */
+	EAttribute getRespuesta_IdRespuesta();
 
 	/**
 	 * Returns the meta object for class '{@link SistemaEncuestas.Navegacion <em>Navegacion</em>}'.
@@ -1157,6 +1257,14 @@ public interface SistemaEncuestasPackage extends EPackage {
 		EReference ENCUESTA__ELEMENTO = eINSTANCE.getEncuesta_Elemento();
 
 		/**
+		 * The meta object literal for the '<em><b>Titulo</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENCUESTA__TITULO = eINSTANCE.getEncuesta_Titulo();
+
+		/**
 		 * The meta object literal for the '{@link SistemaEncuestas.impl.ElementoImpl <em>Elemento</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1207,6 +1315,22 @@ public interface SistemaEncuestasPackage extends EPackage {
 		 * @generated
 		 */
 		EReference MODULO__FIN = eINSTANCE.getModulo_Fin();
+
+		/**
+		 * The meta object literal for the '<em><b>Id Modulo</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MODULO__ID_MODULO = eINSTANCE.getModulo_IdModulo();
+
+		/**
+		 * The meta object literal for the '<em><b>Es Inicial</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MODULO__ES_INICIAL = eINSTANCE.getModulo_EsInicial();
 
 		/**
 		 * The meta object literal for the '{@link SistemaEncuestas.impl.FinImpl <em>Fin</em>}' class.
@@ -1295,6 +1419,14 @@ public interface SistemaEncuestasPackage extends EPackage {
 		EReference PREGUNTA__RESPUESTAS = eINSTANCE.getPregunta_Respuestas();
 
 		/**
+		 * The meta object literal for the '<em><b>Id Pregunta</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PREGUNTA__ID_PREGUNTA = eINSTANCE.getPregunta_IdPregunta();
+
+		/**
 		 * The meta object literal for the '{@link SistemaEncuestas.impl.RespuestaImpl <em>Respuesta</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1311,6 +1443,14 @@ public interface SistemaEncuestasPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute RESPUESTA__VALOR = eINSTANCE.getRespuesta_Valor();
+
+		/**
+		 * The meta object literal for the '<em><b>Id Respuesta</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute RESPUESTA__ID_RESPUESTA = eINSTANCE.getRespuesta_IdRespuesta();
 
 		/**
 		 * The meta object literal for the '{@link SistemaEncuestas.impl.NavegacionImpl <em>Navegacion</em>}' class.

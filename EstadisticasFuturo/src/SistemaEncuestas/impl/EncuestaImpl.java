@@ -8,6 +8,7 @@ import SistemaEncuestas.SistemaEncuestasPackage;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
@@ -15,6 +16,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
@@ -29,6 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link SistemaEncuestas.impl.EncuestaImpl#getElemento <em>Elemento</em>}</li>
+ *   <li>{@link SistemaEncuestas.impl.EncuestaImpl#getTitulo <em>Titulo</em>}</li>
  * </ul>
  *
  * @generated
@@ -43,6 +46,25 @@ public class EncuestaImpl extends MinimalEObjectImpl.Container implements Encues
 	 * @ordered
 	 */
 	protected EList<Elemento> elemento;
+
+	/**
+	 * The default value of the '{@link #getTitulo() <em>Titulo</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTitulo()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TITULO_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getTitulo() <em>Titulo</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTitulo()
+	 * @generated
+	 * @ordered
+	 */
+	protected String titulo = TITULO_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -80,6 +102,27 @@ public class EncuestaImpl extends MinimalEObjectImpl.Container implements Encues
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getTitulo() {
+		return titulo;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTitulo(String newTitulo) {
+		String oldTitulo = titulo;
+		titulo = newTitulo;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SistemaEncuestasPackage.ENCUESTA__TITULO, oldTitulo, titulo));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -99,6 +142,8 @@ public class EncuestaImpl extends MinimalEObjectImpl.Container implements Encues
 		switch (featureID) {
 			case SistemaEncuestasPackage.ENCUESTA__ELEMENTO:
 				return getElemento();
+			case SistemaEncuestasPackage.ENCUESTA__TITULO:
+				return getTitulo();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -116,6 +161,9 @@ public class EncuestaImpl extends MinimalEObjectImpl.Container implements Encues
 				getElemento().clear();
 				getElemento().addAll((Collection<? extends Elemento>)newValue);
 				return;
+			case SistemaEncuestasPackage.ENCUESTA__TITULO:
+				setTitulo((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -131,6 +179,9 @@ public class EncuestaImpl extends MinimalEObjectImpl.Container implements Encues
 			case SistemaEncuestasPackage.ENCUESTA__ELEMENTO:
 				getElemento().clear();
 				return;
+			case SistemaEncuestasPackage.ENCUESTA__TITULO:
+				setTitulo(TITULO_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -145,8 +196,26 @@ public class EncuestaImpl extends MinimalEObjectImpl.Container implements Encues
 		switch (featureID) {
 			case SistemaEncuestasPackage.ENCUESTA__ELEMENTO:
 				return elemento != null && !elemento.isEmpty();
+			case SistemaEncuestasPackage.ENCUESTA__TITULO:
+				return TITULO_EDEFAULT == null ? titulo != null : !TITULO_EDEFAULT.equals(titulo);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (titulo: ");
+		result.append(titulo);
+		result.append(')');
+		return result.toString();
 	}
 
 } //EncuestaImpl

@@ -17,6 +17,8 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link SistemaEncuestas.Modulo#getPreguntas <em>Preguntas</em>}</li>
  *   <li>{@link SistemaEncuestas.Modulo#getInicio <em>Inicio</em>}</li>
  *   <li>{@link SistemaEncuestas.Modulo#getFin <em>Fin</em>}</li>
+ *   <li>{@link SistemaEncuestas.Modulo#getIdModulo <em>Id Modulo</em>}</li>
+ *   <li>{@link SistemaEncuestas.Modulo#getEsInicial <em>Es Inicial</em>}</li>
  * </ul>
  *
  * @see SistemaEncuestas.SistemaEncuestasPackage#getModulo()
@@ -117,5 +119,57 @@ public interface Modulo extends Nodo {
 	 * @generated
 	 */
 	void setFin(Fin value);
+
+	/**
+	 * Returns the value of the '<em><b>Id Modulo</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Id Modulo</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Id Modulo</em>' attribute.
+	 * @see #setIdModulo(int)
+	 * @see SistemaEncuestas.SistemaEncuestasPackage#getModulo_IdModulo()
+	 * @model
+	 * @generated
+	 */
+	int getIdModulo();
+
+	/**
+	 * Sets the value of the '{@link SistemaEncuestas.Modulo#getIdModulo <em>Id Modulo</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Id Modulo</em>' attribute.
+	 * @see #getIdModulo()
+	 * @generated
+	 */
+	void setIdModulo(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Es Inicial</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Es Inicial</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Es Inicial</em>' attribute.
+	 * @see #setEsInicial(int)
+	 * @see SistemaEncuestas.SistemaEncuestasPackage#getModulo_EsInicial()
+	 * @model
+	 * @generated
+	 */
+	int getEsInicial();
+
+	/**
+	 * Sets the value of the '{@link SistemaEncuestas.Modulo#getEsInicial <em>Es Inicial</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Es Inicial</em>' attribute.
+	 * @see #getEsInicial()
+	 * @generated
+	 */
+	void setEsInicial(int value);
 
 } // Modulo

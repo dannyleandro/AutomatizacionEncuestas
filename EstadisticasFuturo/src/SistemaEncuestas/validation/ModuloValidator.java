@@ -23,4 +23,8 @@ public interface ModuloValidator {
 	boolean validatePreguntas(EList<Pregunta> value);
 	boolean validateInicio(Inicio value);
 	boolean validateFin(Fin value);
+
+	boolean validateIdModulo(int value);
+
+	boolean validateEsInicial(int value);
 }

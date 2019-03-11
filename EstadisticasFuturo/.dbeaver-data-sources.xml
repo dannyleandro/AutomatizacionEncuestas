@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data-sources>
+	<data-source id="sqlite_jdbc-1694f2efc76-1e2349e3a4f26099" provider="generic" driver="sqlite_jdbc" name="SQLite - sample.db" save-password="true" read-only="false">
+		<connection server="" database="C:\Users\Danny Hurtado\git\xtext-egl-sql2java\ProyectoBase\co.edu.uniandes.sqlcrud\sample.db" url="jdbc:sqlite:C:\Users\Danny Hurtado\git\xtext-egl-sql2java\ProyectoBase\co.edu.uniandes.sqlcrud\sample.db" type="dev"/>
+	</data-source>
+	<filters/>
+</data-sources>

@@ -35,6 +35,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link SistemaEncuestas.impl.ModuloImpl#getPreguntas <em>Preguntas</em>}</li>
  *   <li>{@link SistemaEncuestas.impl.ModuloImpl#getInicio <em>Inicio</em>}</li>
  *   <li>{@link SistemaEncuestas.impl.ModuloImpl#getFin <em>Fin</em>}</li>
+ *   <li>{@link SistemaEncuestas.impl.ModuloImpl#getIdModulo <em>Id Modulo</em>}</li>
+ *   <li>{@link SistemaEncuestas.impl.ModuloImpl#getEsInicial <em>Es Inicial</em>}</li>
  * </ul>
  *
  * @generated
@@ -89,6 +91,46 @@ public class ModuloImpl extends NodoImpl implements Modulo {
 	 * @ordered
 	 */
 	protected Fin fin;
+
+	/**
+	 * The default value of the '{@link #getIdModulo() <em>Id Modulo</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIdModulo()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int ID_MODULO_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getIdModulo() <em>Id Modulo</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIdModulo()
+	 * @generated
+	 * @ordered
+	 */
+	protected int idModulo = ID_MODULO_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getEsInicial() <em>Es Inicial</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEsInicial()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int ES_INICIAL_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getEsInicial() <em>Es Inicial</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEsInicial()
+	 * @generated
+	 * @ordered
+	 */
+	protected int esInicial = ES_INICIAL_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -233,6 +275,48 @@ public class ModuloImpl extends NodoImpl implements Modulo {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getIdModulo() {
+		return idModulo;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIdModulo(int newIdModulo) {
+		int oldIdModulo = idModulo;
+		idModulo = newIdModulo;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SistemaEncuestasPackage.MODULO__ID_MODULO, oldIdModulo, idModulo));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getEsInicial() {
+		return esInicial;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEsInicial(int newEsInicial) {
+		int oldEsInicial = esInicial;
+		esInicial = newEsInicial;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SistemaEncuestasPackage.MODULO__ES_INICIAL, oldEsInicial, esInicial));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -262,6 +346,10 @@ public class ModuloImpl extends NodoImpl implements Modulo {
 				return getInicio();
 			case SistemaEncuestasPackage.MODULO__FIN:
 				return getFin();
+			case SistemaEncuestasPackage.MODULO__ID_MODULO:
+				return getIdModulo();
+			case SistemaEncuestasPackage.MODULO__ES_INICIAL:
+				return getEsInicial();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -288,6 +376,12 @@ public class ModuloImpl extends NodoImpl implements Modulo {
 			case SistemaEncuestasPackage.MODULO__FIN:
 				setFin((Fin)newValue);
 				return;
+			case SistemaEncuestasPackage.MODULO__ID_MODULO:
+				setIdModulo((Integer)newValue);
+				return;
+			case SistemaEncuestasPackage.MODULO__ES_INICIAL:
+				setEsInicial((Integer)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -312,6 +406,12 @@ public class ModuloImpl extends NodoImpl implements Modulo {
 			case SistemaEncuestasPackage.MODULO__FIN:
 				setFin((Fin)null);
 				return;
+			case SistemaEncuestasPackage.MODULO__ID_MODULO:
+				setIdModulo(ID_MODULO_EDEFAULT);
+				return;
+			case SistemaEncuestasPackage.MODULO__ES_INICIAL:
+				setEsInicial(ES_INICIAL_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -332,6 +432,10 @@ public class ModuloImpl extends NodoImpl implements Modulo {
 				return inicio != null;
 			case SistemaEncuestasPackage.MODULO__FIN:
 				return fin != null;
+			case SistemaEncuestasPackage.MODULO__ID_MODULO:
+				return idModulo != ID_MODULO_EDEFAULT;
+			case SistemaEncuestasPackage.MODULO__ES_INICIAL:
+				return esInicial != ES_INICIAL_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -348,6 +452,10 @@ public class ModuloImpl extends NodoImpl implements Modulo {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (titulo: ");
 		result.append(titulo);
+		result.append(", idModulo: ");
+		result.append(idModulo);
+		result.append(", esInicial: ");
+		result.append(esInicial);
 		result.append(')');
 		return result.toString();
 	}

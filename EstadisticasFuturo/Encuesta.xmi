@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<EPF:Encuesta xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:EPF="EPF.com">
+<EPF:Encuesta xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:EPF="EPF.com" titulo="Situación académica y laboral">
   <elemento xsi:type="EPF:Modulo" titulo="Modulo de datos personales">
     <preguntas descripcion="¿Cúal es su nombre?"/>
     <preguntas tipoPregunta="UR" descripcion="¿Cúal es su edad?">

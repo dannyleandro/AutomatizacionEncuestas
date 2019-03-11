@@ -12,6 +12,7 @@
     </genEnums>
     <genClasses ecoreClass="encuestas.ecore#//Encuesta">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference encuestas.ecore#//Encuesta/elemento"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute encuestas.ecore#//Encuesta/titulo"/>
     </genClasses>
     <genClasses image="false" ecoreClass="encuestas.ecore#//Elemento"/>
     <genClasses ecoreClass="encuestas.ecore#//Modulo">

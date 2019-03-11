@@ -15,4 +15,6 @@ public interface RespuestaValidator {
 	boolean validate();
 
 	boolean validateValor(String value);
+
+	boolean validateIdRespuesta(int value);
 }

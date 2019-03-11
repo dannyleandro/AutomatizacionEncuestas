@@ -49,6 +49,8 @@ public class ModuloItemProvider extends NodoItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addTituloPropertyDescriptor(object);
+			addIdModuloPropertyDescriptor(object);
+			addEsInicialPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -71,6 +73,50 @@ public class ModuloItemProvider extends NodoItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Id Modulo feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIdModuloPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Modulo_idModulo_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Modulo_idModulo_feature", "_UI_Modulo_type"),
+				 SistemaEncuestasPackage.Literals.MODULO__ID_MODULO,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Es Inicial feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addEsInicialPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Modulo_esInicial_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Modulo_esInicial_feature", "_UI_Modulo_type"),
+				 SistemaEncuestasPackage.Literals.MODULO__ES_INICIAL,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -146,6 +192,8 @@ public class ModuloItemProvider extends NodoItemProvider {
 
 		switch (notification.getFeatureID(Modulo.class)) {
 			case SistemaEncuestasPackage.MODULO__TITULO:
+			case SistemaEncuestasPackage.MODULO__ID_MODULO:
+			case SistemaEncuestasPackage.MODULO__ES_INICIAL:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case SistemaEncuestasPackage.MODULO__PREGUNTAS:

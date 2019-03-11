@@ -61,6 +61,7 @@ public class RespuestaItemProvider
 			super.getPropertyDescriptors(object);
 
 			addValorPropertyDescriptor(object);
+			addIdRespuestaPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -83,6 +84,28 @@ public class RespuestaItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Id Respuesta feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIdRespuestaPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Respuesta_idRespuesta_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Respuesta_idRespuesta_feature", "_UI_Respuesta_type"),
+				 SistemaEncuestasPackage.Literals.RESPUESTA__ID_RESPUESTA,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -126,6 +149,7 @@ public class RespuestaItemProvider
 
 		switch (notification.getFeatureID(Respuesta.class)) {
 			case SistemaEncuestasPackage.RESPUESTA__VALOR:
+			case SistemaEncuestasPackage.RESPUESTA__ID_RESPUESTA:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

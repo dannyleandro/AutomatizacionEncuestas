@@ -18,4 +18,6 @@ public interface EncuestaValidator {
 	boolean validate();
 
 	boolean validateElemento(EList<Elemento> value);
+
+	boolean validateTitulo(String value);
 }

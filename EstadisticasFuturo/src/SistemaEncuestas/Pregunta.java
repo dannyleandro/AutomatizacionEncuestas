@@ -16,6 +16,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link SistemaEncuestas.Pregunta#getTipoPregunta <em>Tipo Pregunta</em>}</li>
  *   <li>{@link SistemaEncuestas.Pregunta#getDescripcion <em>Descripcion</em>}</li>
  *   <li>{@link SistemaEncuestas.Pregunta#getRespuestas <em>Respuestas</em>}</li>
+ *   <li>{@link SistemaEncuestas.Pregunta#getIdPregunta <em>Id Pregunta</em>}</li>
  * </ul>
  *
  * @see SistemaEncuestas.SistemaEncuestasPackage#getPregunta()
@@ -25,6 +26,7 @@ import org.eclipse.emf.common.util.EList;
 public interface Pregunta extends Nodo {
 	/**
 	 * Returns the value of the '<em><b>Tipo Pregunta</b></em>' attribute.
+	 * The default value is <code>"A"</code>.
 	 * The literals are from the enumeration {@link SistemaEncuestas.ETipoPregunta}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -36,7 +38,7 @@ public interface Pregunta extends Nodo {
 	 * @see SistemaEncuestas.ETipoPregunta
 	 * @see #setTipoPregunta(ETipoPregunta)
 	 * @see SistemaEncuestas.SistemaEncuestasPackage#getPregunta_TipoPregunta()
-	 * @model unique="false"
+	 * @model default="A" unique="false"
 	 * @generated
 	 */
 	ETipoPregunta getTipoPregunta();
@@ -93,5 +95,31 @@ public interface Pregunta extends Nodo {
 	 * @generated
 	 */
 	EList<Respuesta> getRespuestas();
+
+	/**
+	 * Returns the value of the '<em><b>Id Pregunta</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Id Pregunta</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Id Pregunta</em>' attribute.
+	 * @see #setIdPregunta(int)
+	 * @see SistemaEncuestas.SistemaEncuestasPackage#getPregunta_IdPregunta()
+	 * @model
+	 * @generated
+	 */
+	int getIdPregunta();
+
+	/**
+	 * Sets the value of the '{@link SistemaEncuestas.Pregunta#getIdPregunta <em>Id Pregunta</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Id Pregunta</em>' attribute.
+	 * @see #getIdPregunta()
+	 * @generated
+	 */
+	void setIdPregunta(int value);
 
 } // Pregunta

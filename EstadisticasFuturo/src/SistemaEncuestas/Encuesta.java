@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link SistemaEncuestas.Encuesta#getElemento <em>Elemento</em>}</li>
+ *   <li>{@link SistemaEncuestas.Encuesta#getTitulo <em>Titulo</em>}</li>
  * </ul>
  *
  * @see SistemaEncuestas.SistemaEncuestasPackage#getEncuesta()
@@ -38,5 +39,31 @@ public interface Encuesta extends EObject {
 	 * @generated
 	 */
 	EList<Elemento> getElemento();
+
+	/**
+	 * Returns the value of the '<em><b>Titulo</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Titulo</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Titulo</em>' attribute.
+	 * @see #setTitulo(String)
+	 * @see SistemaEncuestas.SistemaEncuestasPackage#getEncuesta_Titulo()
+	 * @model
+	 * @generated
+	 */
+	String getTitulo();
+
+	/**
+	 * Sets the value of the '{@link SistemaEncuestas.Encuesta#getTitulo <em>Titulo</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Titulo</em>' attribute.
+	 * @see #getTitulo()
+	 * @generated
+	 */
+	void setTitulo(String value);
 
 } // Encuesta

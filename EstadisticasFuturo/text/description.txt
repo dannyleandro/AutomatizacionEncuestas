@@ -9,6 +9,7 @@ Package SistemaEncuestas <EPF.com>
 
   Class Encuesta
     Reference elemento : Elemento<<0..*>>
+    Attribute titulo : EString
 
   Class Elemento
 
@@ -17,6 +18,8 @@ Package SistemaEncuestas <EPF.com>
     Reference preguntas : Pregunta<<1..*>>
     Reference inicio : Inicio<<1..1>>
     Reference fin : Fin
+    Attribute idModulo : EInt
+    Attribute esInicial : EInt
 
   Class Fin
     Attribute titulo : EString
@@ -30,9 +33,11 @@ Package SistemaEncuestas <EPF.com>
     Attribute tipoPregunta : ETipoPregunta
     Attribute descripcion : EString
     Reference respuestas : Respuesta<<0..*>>
+    Attribute idPregunta : EInt
 
   Class Respuesta
     Attribute valor : EString
+    Attribute idRespuesta : EInt
 
   Class Navegacion -> Elemento
     Attribute titulo : EString
@@ -59,6 +64,6 @@ Package SistemaEncuestas <EPF.com>
     Reference origen : Pregunta<<1..1>>
 
   Enum ETipoPregunta
-    Literal A = 0
-    Literal UR = 1
-    Literal MR = 2
+    Literal A = 1
+    Literal UR = 2
+    Literal MR = 3

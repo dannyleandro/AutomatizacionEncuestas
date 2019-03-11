@@ -51,6 +51,7 @@ public class PreguntaItemProvider extends NodoItemProvider {
 
 			addTipoPreguntaPropertyDescriptor(object);
 			addDescripcionPropertyDescriptor(object);
+			addIdPreguntaPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -95,6 +96,28 @@ public class PreguntaItemProvider extends NodoItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Id Pregunta feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIdPreguntaPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Pregunta_idPregunta_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Pregunta_idPregunta_feature", "_UI_Pregunta_type"),
+				 SistemaEncuestasPackage.Literals.PREGUNTA__ID_PREGUNTA,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -170,6 +193,7 @@ public class PreguntaItemProvider extends NodoItemProvider {
 		switch (notification.getFeatureID(Pregunta.class)) {
 			case SistemaEncuestasPackage.PREGUNTA__TIPO_PREGUNTA:
 			case SistemaEncuestasPackage.PREGUNTA__DESCRIPCION:
+			case SistemaEncuestasPackage.PREGUNTA__ID_PREGUNTA:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case SistemaEncuestasPackage.PREGUNTA__RESPUESTAS:

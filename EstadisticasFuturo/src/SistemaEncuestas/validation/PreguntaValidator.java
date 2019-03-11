@@ -21,4 +21,6 @@ public interface PreguntaValidator {
 	boolean validateTipoPregunta(ETipoPregunta value);
 	boolean validateDescripcion(String value);
 	boolean validateRespuestas(EList<Respuesta> value);
+
+	boolean validateIdPregunta(int value);
 }

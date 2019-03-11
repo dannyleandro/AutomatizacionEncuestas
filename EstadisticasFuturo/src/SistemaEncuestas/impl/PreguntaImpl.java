@@ -33,6 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link SistemaEncuestas.impl.PreguntaImpl#getTipoPregunta <em>Tipo Pregunta</em>}</li>
  *   <li>{@link SistemaEncuestas.impl.PreguntaImpl#getDescripcion <em>Descripcion</em>}</li>
  *   <li>{@link SistemaEncuestas.impl.PreguntaImpl#getRespuestas <em>Respuestas</em>}</li>
+ *   <li>{@link SistemaEncuestas.impl.PreguntaImpl#getIdPregunta <em>Id Pregunta</em>}</li>
  * </ul>
  *
  * @generated
@@ -87,6 +88,26 @@ public class PreguntaImpl extends NodoImpl implements Pregunta {
 	 * @ordered
 	 */
 	protected EList<Respuesta> respuestas;
+
+	/**
+	 * The default value of the '{@link #getIdPregunta() <em>Id Pregunta</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIdPregunta()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int ID_PREGUNTA_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getIdPregunta() <em>Id Pregunta</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIdPregunta()
+	 * @generated
+	 * @ordered
+	 */
+	protected int idPregunta = ID_PREGUNTA_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -166,6 +187,27 @@ public class PreguntaImpl extends NodoImpl implements Pregunta {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public int getIdPregunta() {
+		return idPregunta;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIdPregunta(int newIdPregunta) {
+		int oldIdPregunta = idPregunta;
+		idPregunta = newIdPregunta;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, SistemaEncuestasPackage.PREGUNTA__ID_PREGUNTA, oldIdPregunta, idPregunta));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -189,6 +231,8 @@ public class PreguntaImpl extends NodoImpl implements Pregunta {
 				return getDescripcion();
 			case SistemaEncuestasPackage.PREGUNTA__RESPUESTAS:
 				return getRespuestas();
+			case SistemaEncuestasPackage.PREGUNTA__ID_PREGUNTA:
+				return getIdPregunta();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -212,6 +256,9 @@ public class PreguntaImpl extends NodoImpl implements Pregunta {
 				getRespuestas().clear();
 				getRespuestas().addAll((Collection<? extends Respuesta>)newValue);
 				return;
+			case SistemaEncuestasPackage.PREGUNTA__ID_PREGUNTA:
+				setIdPregunta((Integer)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -233,6 +280,9 @@ public class PreguntaImpl extends NodoImpl implements Pregunta {
 			case SistemaEncuestasPackage.PREGUNTA__RESPUESTAS:
 				getRespuestas().clear();
 				return;
+			case SistemaEncuestasPackage.PREGUNTA__ID_PREGUNTA:
+				setIdPregunta(ID_PREGUNTA_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -251,6 +301,8 @@ public class PreguntaImpl extends NodoImpl implements Pregunta {
 				return DESCRIPCION_EDEFAULT == null ? descripcion != null : !DESCRIPCION_EDEFAULT.equals(descripcion);
 			case SistemaEncuestasPackage.PREGUNTA__RESPUESTAS:
 				return respuestas != null && !respuestas.isEmpty();
+			case SistemaEncuestasPackage.PREGUNTA__ID_PREGUNTA:
+				return idPregunta != ID_PREGUNTA_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -269,6 +321,8 @@ public class PreguntaImpl extends NodoImpl implements Pregunta {
 		result.append(tipoPregunta);
 		result.append(", descripcion: ");
 		result.append(descripcion);
+		result.append(", idPregunta: ");
+		result.append(idPregunta);
 		result.append(')');
 		return result.toString();
 	}

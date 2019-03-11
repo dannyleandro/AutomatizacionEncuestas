@@ -224,6 +224,15 @@ public class SistemaEncuestasPackageImpl extends EPackageImpl implements Sistema
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getEncuesta_Titulo() {
+		return (EAttribute)encuestaEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getElemento() {
 		return elementoEClass;
 	}
@@ -271,6 +280,24 @@ public class SistemaEncuestasPackageImpl extends EPackageImpl implements Sistema
 	 */
 	public EReference getModulo_Fin() {
 		return (EReference)moduloEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getModulo_IdModulo() {
+		return (EAttribute)moduloEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getModulo_EsInicial() {
+		return (EAttribute)moduloEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -368,6 +395,15 @@ public class SistemaEncuestasPackageImpl extends EPackageImpl implements Sistema
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getPregunta_IdPregunta() {
+		return (EAttribute)preguntaEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getRespuesta() {
 		return respuestaEClass;
 	}
@@ -379,6 +415,15 @@ public class SistemaEncuestasPackageImpl extends EPackageImpl implements Sistema
 	 */
 	public EAttribute getRespuesta_Valor() {
 		return (EAttribute)respuestaEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getRespuesta_IdRespuesta() {
+		return (EAttribute)respuestaEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -573,6 +618,7 @@ public class SistemaEncuestasPackageImpl extends EPackageImpl implements Sistema
 		// Create classes and their features
 		encuestaEClass = createEClass(ENCUESTA);
 		createEReference(encuestaEClass, ENCUESTA__ELEMENTO);
+		createEAttribute(encuestaEClass, ENCUESTA__TITULO);
 
 		elementoEClass = createEClass(ELEMENTO);
 
@@ -581,6 +627,8 @@ public class SistemaEncuestasPackageImpl extends EPackageImpl implements Sistema
 		createEReference(moduloEClass, MODULO__PREGUNTAS);
 		createEReference(moduloEClass, MODULO__INICIO);
 		createEReference(moduloEClass, MODULO__FIN);
+		createEAttribute(moduloEClass, MODULO__ID_MODULO);
+		createEAttribute(moduloEClass, MODULO__ES_INICIAL);
 
 		finEClass = createEClass(FIN);
 		createEAttribute(finEClass, FIN__TITULO);
@@ -594,9 +642,11 @@ public class SistemaEncuestasPackageImpl extends EPackageImpl implements Sistema
 		createEAttribute(preguntaEClass, PREGUNTA__TIPO_PREGUNTA);
 		createEAttribute(preguntaEClass, PREGUNTA__DESCRIPCION);
 		createEReference(preguntaEClass, PREGUNTA__RESPUESTAS);
+		createEAttribute(preguntaEClass, PREGUNTA__ID_PREGUNTA);
 
 		respuestaEClass = createEClass(RESPUESTA);
 		createEAttribute(respuestaEClass, RESPUESTA__VALOR);
+		createEAttribute(respuestaEClass, RESPUESTA__ID_RESPUESTA);
 
 		navegacionEClass = createEClass(NAVEGACION);
 		createEAttribute(navegacionEClass, NAVEGACION__TITULO);
@@ -667,6 +717,7 @@ public class SistemaEncuestasPackageImpl extends EPackageImpl implements Sistema
 		// Initialize classes, features, and operations; add parameters
 		initEClass(encuestaEClass, Encuesta.class, "Encuesta", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEncuesta_Elemento(), this.getElemento(), null, "elemento", null, 0, -1, Encuesta.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEncuesta_Titulo(), ecorePackage.getEString(), "titulo", null, 0, 1, Encuesta.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(elementoEClass, Elemento.class, "Elemento", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -675,6 +726,8 @@ public class SistemaEncuestasPackageImpl extends EPackageImpl implements Sistema
 		initEReference(getModulo_Preguntas(), this.getPregunta(), null, "preguntas", null, 1, -1, Modulo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getModulo_Inicio(), this.getInicio(), null, "inicio", null, 1, 1, Modulo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getModulo_Fin(), this.getFin(), null, "fin", null, 0, 1, Modulo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getModulo_IdModulo(), ecorePackage.getEInt(), "idModulo", null, 0, 1, Modulo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getModulo_EsInicial(), ecorePackage.getEInt(), "esInicial", null, 0, 1, Modulo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(finEClass, Fin.class, "Fin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getFin_Titulo(), ecorePackage.getEString(), "titulo", null, 0, 1, Fin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -685,12 +738,14 @@ public class SistemaEncuestasPackageImpl extends EPackageImpl implements Sistema
 		initEReference(getSaltoRespuesta_Origen(), this.getRespuesta(), null, "origen", null, 1, 1, SaltoRespuesta.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(preguntaEClass, Pregunta.class, "Pregunta", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPregunta_TipoPregunta(), this.getETipoPregunta(), "tipoPregunta", null, 0, 1, Pregunta.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPregunta_TipoPregunta(), this.getETipoPregunta(), "tipoPregunta", "A", 0, 1, Pregunta.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPregunta_Descripcion(), ecorePackage.getEString(), "descripcion", null, 0, 1, Pregunta.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPregunta_Respuestas(), this.getRespuesta(), null, "respuestas", null, 0, -1, Pregunta.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPregunta_IdPregunta(), ecorePackage.getEInt(), "idPregunta", null, 0, 1, Pregunta.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(respuestaEClass, Respuesta.class, "Respuesta", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRespuesta_Valor(), ecorePackage.getEString(), "valor", null, 0, 1, Respuesta.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getRespuesta_IdRespuesta(), ecorePackage.getEInt(), "idRespuesta", null, 0, 1, Respuesta.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(navegacionEClass, Navegacion.class, "Navegacion", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNavegacion_Titulo(), ecorePackage.getEString(), "titulo", null, 0, 1, Navegacion.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
